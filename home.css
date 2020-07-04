@@ -1,0 +1,292 @@
+/*
+//Honor Code:
+//This is my own work and I have not received any unauthorized help in completing this. 
+//I have not copied from my classmate, friend, nor any unauthorized resource. 
+//I am well aware of the policies stipulated in the handbook regarding academic dishonesty. 
+//If proven guilty, I won't be credited any points for this endeavor.
+*/
+/** GENERAL **/
+body {
+	margin: 0 auto;
+	background: #0E0325;
+}
+/** TOP NAVIGATION BAR **/
+.topnav {
+  overflow: hidden;
+  background-color: rgba(0,0,0,0.2);
+  font-family: 'Inconsolata', monospace;
+}
+.topnav a {
+  float: left;
+  color: white;
+  text-align: center;
+  padding: 20px 20px;
+  text-decoration: none;
+  font-size: 15px;
+  background: #19094F;
+  margin: 0px;
+}
+.topnav a.active {
+  background-color: #19094F;
+  color: white;
+  font-family: 'Inconsolata', monospace;
+  font-size: 15px;
+  padding: 20px 20px;
+}
+.topnav-right {
+  float: right;
+  background: #19094F;
+}
+button {
+	background:#19094F;
+	border: none;
+	font-family: 'Inconsolata', monospace;
+}
+/** SUMMARY **/
+.clearfix::after {
+	content: "";
+    display: table;
+    clear: both;
+}
+.right { 
+	float: right; 
+}
+.red { 
+	color: #FF5049 !important; 
+}
+.red-focus:focus { 
+	border: 1px solid #FF5049 !important; 
+}
+.summary {
+	height: 40vh;
+}
+.budget {
+	position: absolute;
+    width: 350px;
+    top: 27%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+}
+.budget_title {
+	font-size: 18px;
+    text-align: center;
+    margin-bottom: 10px;
+    font-weight: 300;
+}
+.budget_value {
+	font-weight: 300;
+    font-size: 46px;
+    text-align: center;
+    margin-bottom: 25px;
+    letter-spacing: 2px;
+}
+.budget_income, .budget_expenses {
+	padding: 12px;
+    text-transform: uppercase;
+}
+.budget_income {
+	margin-bottom: 10px;
+    background-color: #E492F5;
+}
+.budget_expenses {
+	background-color: #753871;
+}
+.budget_income_text, .budget_expenses_text {
+	float: left;
+    font-size: 13px;
+    margin-top: 2px;
+}
+.budget_income_text {
+	color: #19094F;
+}
+.budget_expenses_text {
+	color: #E492F5;
+}
+.budget_income_value, .budget_expenses_value {
+	letter-spacing: 1px;
+    float: left;
+}
+.budget_income_percentage, .budget_expenses_percentage {
+	float: left;
+    width: 34px;
+    font-size: 11px;
+    padding: 3px 0;
+    margin-left: 10px;
+}
+.budget_expenses_percentage {
+	background-color: rgba(255, 255, 255, 0.2);
+    text-align: center;
+    border-radius: 3px;
+}
+/** DETAILS **/
+.option {
+	padding: 14px;
+    border-top: 1px solid #E492F5;
+    background-color: rgba(0,0,0,0.2);
+}
+.option_container {
+	margin: 0 auto;
+    text-align: center;
+}
+.option_type {
+	width: 55px;
+    border: 1px solid #e7e7e7;
+	border-radius: 5px;
+    height: 44px;
+    font-size: 18px;
+    color: inherit;
+    background-color: #fff;
+    margin-right: 10px;
+    font-weight: 300;
+    transition: border 0.3s;
+}
+.description, .amount {
+	border: 1px solid #e7e7e7;
+    background-color: #fff;
+    color: inherit;
+    font-family: inherit;
+    font-size: 14px;
+    padding: 12px 15px;
+    margin-right: 10px;
+    border-radius: 5px;
+    transition: border 0.3s;
+}
+.description { width: 300px; }
+.amount { width: 100px; }
+.confirm {
+	font-size: 35px;
+    background: none;
+    border: none;
+    color: #28B9B5;
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 1.1;
+    margin-left: 10px;
+}
+.confirm:active { transform: translateY(2px); }
+.option_type:focus, .description:focus, .amount:focus {
+	outline: none;
+    border: 1px solid #28B9B5;
+}
+.confirm:focus { outline: none; }
+/** CONTAINER **/
+.container {
+	width: 1000px;
+    margin: 60px auto;
+}
+.income {
+	float: left;
+    width: 475px;
+    margin-right: 50px;
+}
+.expenses {
+    float: left;
+    width: 475px;
+}
+h2 {
+    text-transform: uppercase;
+    font-size: 18px;
+    font-weight: 400;
+    margin-bottom: 15px;
+}
+.income_title { color: #28B9B5; }
+.expenses_title { color: #FF5049; }
+.item {
+    padding: 13px;
+    border-bottom: 1px solid #e7e7e7;
+	color: white;
+}
+.item:first-child { border-top: 1px solid #e7e7e7; }
+.item:nth-child(even) { background-color: #0E0325; }
+.item_description {
+    float: left;
+}
+.item_value {
+    float: left;
+    transition: transform 0.3s;
+}
+.item_percentage {
+    float: left;
+    margin-left: 20px;
+    transition: transform 0.3s;
+    font-size: 11px;
+    background-color: #FFDAD9;
+    padding: 3px;
+    border-radius: 3px;
+    width: 32px;
+    text-align: center;
+}
+.income .item_value,
+.income .item_delete_btn {
+    color: #28B9B5;
+}
+.expenses .item_value,
+.expenses .item_percentage,
+.expenses .item_delete_btn {
+    color: #FF5049;
+}
+.item_delete {
+    float: left;
+}
+.item_delete_btn {
+    font-size: 22px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 1;
+    display: none;
+}
+.item_delete_btn:focus { outline: none; }
+.item_delete_btn:active { transform: translateY(2px); }
+.item:hover .item_delete_btn { display: block; }
+.item:hover .item_value { transform: translateX(-20px); }
+.item:hover .item_percentage { transform: translateX(-20px); }
+.unpaid {
+    background-color: #FFDAD9 !important;
+    cursor: pointer;
+    color: #FF5049;
+}
+.unpaid .item_percentage { box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.1); }
+.unpaid:hover .item_description { font-weight: 900; }
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+.dropdown .dropbtn {
+  font-size: 16px;  
+  border: none;
+  outline: none;
+  color: white;
+  padding: 20px 50px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+.dropdown-content a {
+  float: none;
+  color: white;
+  padding: 20px 20px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+  font-size: 14.6px;
+}
+.dropdown-content a:hover {
+  background-color: #ddd;
+  color: #19094F;
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+}

@@ -1,0 +1,228 @@
+/*
+This is my own work and I have not received any unauthorized help in completing this. 
+I have not copied from my classmate, friend, nor any unauthorized resource. I am well 
+aware of the policies stipulated in the handbook regarding academic dishonesty. If 
+proven guilty, I won't be credited any points for this endeavor.
+*/
+body {
+  font-family: Arial;
+  color: white;
+}
+.split {
+  height: 100%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  overflow-x: hidden;
+}
+.one {
+  right: 50%;
+  left: 0%;
+  width: 50%;
+  background: #0E0325;
+  padding: 300px 0px;
+}
+.two {
+  right: 0;
+  left: 50%;
+  width: 50%;
+  background: #E492F5;
+}
+.col_1 {
+  text-align: center;
+  color: white;
+  margin: 0px;
+  width: 100%;
+  height: 100%;
+}
+.col_2 {
+	color: white;
+	top: 0;
+	width: 100%;
+	height: 100%;
+}
+h1 {
+	font-family: 'Josefin Sans', sans-serif;
+	color: #E492F5;
+	letter-spacing: 2px;
+}
+div.transbox {
+	margin: 0 auto;
+	width: 300px;
+	background-color: #0E0325;
+	border: 5px solid #753871;
+	position: relative;
+	padding-top: 30px;
+	padding-bottom: 12px;
+}
+.loginbox{
+    width: 320px;
+    height: 420px;
+    background: #a41fd6;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    box-sizing: border-box;
+    padding: 85px 30px;
+	border-radius: 30px;
+}
+.login-details {
+	color: white;
+}
+.signup-details {
+	color: black;
+}
+.avatar{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    position: absolute;
+    top: -50px;
+    left: calc(50% - 50px);
+}
+h1{
+    margin: 0;
+    padding: 0 0 20px;
+    text-align: center;
+    font-size: 22px;
+}
+h2 {
+	color: black;
+	text-align: center;
+	padding-bottom: 20px;
+}
+.loginbox p{
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+}
+.loginbox input{
+    width: 100%;
+    margin-bottom: 20px;
+}
+.loginbox input[type="text"], input[type="password"]{
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: pink;
+    font-size: 16px;
+}
+.loginbox input[type="submit"]
+{
+    border: none;
+    outline: none;
+    height: 40px;
+    background: purple;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 20px;
+	padding: 12px 28px;
+}
+.loginbox button[type="submit"]:hover
+{
+    cursor: pointer;
+    background: pink;
+    color: #000;
+}
+.loginbox button[type="button"]:hover
+{
+    cursor: pointer;
+    background: pink;
+    color: #000;
+}
+/*************************************/
+.signupbox{
+    width: 320px;
+    height: 420px;
+    background: rgba(254,221,254,0.7);
+    color: #fff;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    box-sizing: border-box;
+    padding: 30px 30px;
+	border-radius: 30px;
+}
+.signupbox p{
+    margin: 0;
+    padding: 0;
+    font-weight: bold;
+}
+.signupbox input{
+    width: 100%;
+    margin-bottom: 20px;
+}
+.signupbox input[type="text"], input[type="password"]
+{
+    border: none;
+    border-bottom: 1px solid #fff;
+    background: transparent;
+    outline: none;
+    height: 40px;
+    color: white;
+    font-size: 16px;
+}
+.signupbox input[type="submit"]
+{
+    border: none;
+    outline: none;
+    height: 40px;
+    background: purple;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 20px;
+	padding: 12px 28px;
+}
+.signupbox button[type="submit"]:hover
+{
+    cursor: pointer;
+    background: pink;
+    color: #000;
+}
+.signupbox button[type="button"]:hover
+{
+    cursor: pointer;
+    background: pink;
+    color: #000;
+}
+/************************************/
+button {
+	background-color: #0E0325;
+	border: none;
+	border-radius: 12px;
+	color: white;
+	padding: 12px 15px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	margin: 4px 10px;
+	cursor: pointer;
+	width: 41%;
+}
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding: 0px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  margin: 0 auto;
+}
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+}
