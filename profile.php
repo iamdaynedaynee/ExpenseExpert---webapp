@@ -1,18 +1,25 @@
 <?php 
-//Honor Code:
-//This is my not fully my own work and I have received some help from the internet that helped in completing this. 
-//I sked help from my classmates and friends, while some, I just get the ideas from internet resources.
-//I am well aware of the policies stipulated in the handbook regarding academic dishonesty. 
-//If proven guilty, I won't be credited any points for this endeavor.
+// SOLANO, Meryll Dayne B.
+// ITMC231 Platform Technologies
+// BS IT - 2ND YEAR
+// Midterm Requirement
+// Honor Code:
+// This is my not fully my own work and I have received some help from the internet that helped in completing this. 
+// I have integrated some ideas that I have found available on the internet.
+// I sked help from my classmates and friends, while some, I just get the ideas from internet resources.
+// I am well aware of the policies stipulated in the handbook regarding academic dishonesty. 
+// If proven guilty, I won't be credited any points for this endeavor.
 
 	include "database_conn.php";
 	session_start();
 	
+	// if the edit button has been set/clicked
 	if (isset($_GET['edit'])) {
 		$ID = $_GET['edit'];
 		$update = true;
 		$record = mysqli_query($database_conn, "SELECT * FROM db_signup_data WHERE ID=$ID");
 
+		// if the account was found in the database
 		if (@count($record) == 1 ) {
 			$n = mysqli_fetch_array($record);
 			$username = $n['username'];
@@ -26,6 +33,7 @@
 		<title>Your Profile</title>
 	</head>
 	<body>
+		<!-- display prompt message -->
 		<?php if (isset($_SESSION['message'])): ?>
 		<div class="msg">
 			<?php 
@@ -34,7 +42,7 @@
 			?>
 		</div>
 		<?php endif ?>
-
+		<!-- select all data from the table in the database -->
 		<?php $results = mysqli_query($database_conn, "SELECT * FROM db_signup_data"); ?>
 
 		<table>
@@ -46,6 +54,7 @@
 				</tr>
 			</thead>
 			
+			<!-- display all the data from the table in the database -->
 			<?php while ($row = mysqli_fetch_array($results)) { ?>
 				<tr>
 					<td><?php echo $row['username']; ?></td>

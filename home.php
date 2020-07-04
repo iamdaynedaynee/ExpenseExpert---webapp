@@ -1,10 +1,15 @@
 <!DOCTYPE html>
 <?php
-	//Honor Code:
-	//This is my not fully my own work and I have received some help from the internet that helped in completing this. 
-	//I have not copied from my classmate, friend, I just get ideas from internet resources.
-	//I am well aware of the policies stipulated in the handbook regarding academic dishonesty. 
-	//If proven guilty, I won't be credited any points for this endeavor.
+	// SOLANO, Meryll Dayne B.
+	// ITMC231 Platform Technologies
+	// BS IT - 2ND YEAR
+	// Midterm Requirement
+	// Honor Code:
+	// This is my not fully my own work and I have received some help from the internet that helped in completing this.
+	// I have integrated some ideas that I have found available on the internet.
+	// I have not copied from my classmate, friend, I just get ideas from internet resources.
+	// I am well aware of the policies stipulated in the handbook regarding academic dishonesty. 
+	// If proven guilty, I won't be credited any points for this endeavor.
 
 	include "database_conn.php";
 	session_start();

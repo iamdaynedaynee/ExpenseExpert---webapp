@@ -1,17 +1,24 @@
-//Honor Code:
-//This is my not fully my own work and I have received some help from the internet that helped in completing this. 
-//I have not copied from my classmate, friend, I just get ideas from internet resources.
-//I am well aware of the policies stipulated in the handbook regarding academic dishonesty. 
-//If proven guilty, I won't be credited any points for this endeavor.
+// SOLANO, Meryll Dayne B.
+// ITMC231 Platform Technologies
+// BS IT - 2ND YEAR
+// Midterm Requirement
+// Honor Code:
+// This is my not fully my own work and I have received some help from the internet that helped in completing this. 
+// I have integrated some ideas that I have found available on the internet.
+// I have not copied from my classmate, friend, I just get some ideas from internet resources.
+// I am well aware of the policies stipulated in the handbook regarding academic dishonesty. 
+// If proven guilty, I won't be credited any points for this endeavor.
 
 // BUDGET CONTROLLER
 var budgetController = (function(){
+	// create object via constructor
 	var Expense = function(id,description,value){
 		this.id = id;
 		this.description = description;
 		this.value = value;
 		this.percentage = -1;
 	};
+	// prototype adds calcPercentage to the object constructor(budgetController)
 	Expense.prototype.calcPercentage = function(totalIncome){
 		if(totalIncome > 0){
 			this.percentage = Math.round((this.value / totalIncome) * 100);
@@ -19,14 +26,17 @@ var budgetController = (function(){
 			this.percentage = -1;
 		}
 	};
+	// prototype adds getPercentage to the object constructor(budgetController)
 	Expense.prototype.getPercentage = function(){
 		return this.percentage;
 	};
+	// constructor 
 	var Income = function(id,description,value){
 		this.id = id;
 		this.description = description;
 		this.value = value;
 	};
+	// constructor
 	var calculateTotal = function(type){
 		var sum = 0;
 		data.allItems[type].forEach(function(el){
@@ -34,6 +44,7 @@ var budgetController = (function(){
 		});
 		data.totals[type] = sum;
 	};
+	// initialize variables
 	var data = {
 		allItems: {
 			exp: [],
@@ -47,6 +58,7 @@ var budgetController = (function(){
 		percentage: -1
 	};
 	return {
+		// adding new item to the list
 		addItem: function(type, des, val){
 			var newItem,
 			ID;
@@ -62,11 +74,12 @@ var budgetController = (function(){
 			} else if(type === "inc") {
 				newItem = new Income(ID,des,val);
 			}
-			// Push it into our data structure
+			// Push it into data structure
 			data.allItems[type].push(newItem);
 			// Return the new element
 			return newItem;
 		},
+		// deleting item from the list
 		deleteItem: function(type,id){
 			var ids,
 			index;
@@ -78,6 +91,7 @@ var budgetController = (function(){
 				data.allItems[type].splice(index, 1);
 			}
 		},
+		// calculates total budget
 		calculateBudget: function(){
 			// Calculate total income and expenses
 			calculateTotal('exp');
@@ -91,17 +105,20 @@ var budgetController = (function(){
 				data.percentage = -1;
 			}
 		},
+		// calculate how much percentage was the expenses in total with respect to the total income
 		calculatePercentage: function(){
 			data.allItems.exp.forEach(function(el){
 				el.calcPercentage(data.totals.inc);
 			});
 		},
+		// get percentage
 		getPercentage: function(){
 			var allPerc = data.allItems.exp.map(function(el){
 				return el.getPercentage();
 			});
 			return allPerc;
 		},
+		// get latest budget
 		getBudget: function(){
 			return {
 				budget: data.budget,
@@ -110,6 +127,7 @@ var budgetController = (function(){
 				percentage: data.percentage
 			}
 		},
+		// display data
 		testitem: function(){
 			console.log(data);
 		}
