@@ -2,7 +2,7 @@
 SOLANO, Meryll Dayne B.
 ITMC231 Platform Technologies
 BS IT - 2ND YEAR
-Midterm Requirement
+Final Requirement
 
 Honor Code:
 This is my own work and I have not received any unauthorized help in completing this. 
@@ -10,11 +10,34 @@ I have not copied from my classmate, friend, nor any unauthorized resource. I am
 aware of the policies stipulated in the handbook regarding academic dishonesty. If 
 proven guilty, I won't be credited any points for this endeavor.
 */
+.home_nav {
+	overflow: hidden;
+	background-color: rgba(0,0,0,0.2);
+	font-family: 'Inconsolata', monospace;
+}
+.home_nav a {
+	float: left;
+	color: white;
+	text-align: center;
+	padding: 20px 20px;
+	text-decoration: none;
+	font-size: 15px;
+	background: #19094F;
+	margin: 0px;
+}
+.home_nav a.active {
+	background-color: #19094F;
+	color: white;
+	font-family: 'Inconsolata', monospace;
+	font-size: 15px;
+	padding: 20px 20px;
+}
 body {
+	margin: 0px;
     font-size: 19px;
 	background: #0E0325;
 	color: white;
-	font-family: Arial;
+	font-family: 'Inconsolata', monospace;
 }
 table{
     width: 50%;

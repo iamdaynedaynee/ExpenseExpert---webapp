@@ -2,7 +2,7 @@
 	// SOLANO, Meryll Dayne B.
 	// ITMC231 Platform Technologies
 	// BS IT - 2ND YEAR
-	// Midterm Requirement
+	// Final Requirement
 	// Honor Code:
 	// This is my own work and I have not received any unauthorized help in completing this. 
 	// I have not copied from my classmate, friend, nor any unauthorized resource. 
@@ -18,6 +18,7 @@
 	$_SESSION['username'] = $username;
 	$_SESSION['password'] = $password;
 	
+	// select the data from the database that matches the username and the password
 	$query = "SELECT * FROM db_signup_data WHERE (username = '$username' &&  password = '$password')";
 	$result = mysqli_query($database_conn, $query);
 	
@@ -28,11 +29,11 @@
 	if(mysqli_num_rows($result) == 1){
 		$getdata = mysqli_fetch_assoc($query);
 		$id = $data['ID'];
-		$_SESSION['id'] = $id;
+		$_SESSION['ID'] = $id;
 		header("location: home.php");
 	}
 	else {
-		// prompt message
+		// else, prompt message
 		echo '<script> alert("Login failed.");</script>';
 		echo '<script> window.location.href="login.php" </script>';
 	}

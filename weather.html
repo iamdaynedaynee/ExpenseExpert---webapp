@@ -1,0 +1,111 @@
+<!--
+	//SOLANO, Meryll Dayne B.
+	// ITMC231 Platform Technologies
+	// BS IT - 2ND YEAR
+	// Final Requirement
+	// Honor Code:
+	// This is my own work and I have not received any unauthorized help in completing this. 
+	// I have not copied from my classmate, friend, nor any unauthorized resource. 
+	// I am well aware of the policies stipulated in the handbook regarding academic dishonesty. 
+	// If proven guilty, I won't be credited any points for this endeavor.
+-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Weather</title>
+		<meta charset="utf-8" />
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:100,300,400,600" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		
+		<style>
+			body {
+				margin: 0 auto;
+				background: #0E0325;
+				text-align: center;
+			}
+			.weather_nav {
+				overflow: hidden;
+				background-color: rgba(0,0,0,0.2);
+				font-family: 'Inconsolata', monospace;
+				margin-bottom: 30px;
+			}
+			.weather_nav a {
+				float: left;
+				color: white;
+				text-align: center;
+				padding: 20px 20px;
+				text-decoration: none;
+				font-size: 15px;
+				background: #19094F;
+				margin: 0px;
+			}
+			.weather_nav a.active {
+				background-color: #19094F;
+				color: white;
+				font-family: 'Inconsolata', monospace;
+				font-size: 15px;
+				padding: 20px 20px;
+			}
+			input, select, button {
+				font-family: 'Inconsolata', monospace;
+				border-radius: 5px;
+				padding: 10px;
+				background: #E492F5;
+				color: #0E0325;
+				border: 1px solid white;
+				box-shadow: 5px 7px #888888;
+				margin-left: 5px;
+				margin-right: 5px;
+				margin-bottom: 20px;
+			}
+			button:hover {
+				background: #753871;
+				color: #E492F5;
+			}
+			#output {
+				margin-top: 10px;
+				text-align: center;
+				font-family: 'Inconsolata', monospace;
+				color: #E492F5;
+			}
+		</style>
+	</head>
+	
+	<body>
+		<div class="weather_nav">
+			<a class="active" href="home.php"><i class="fa fa-home"></i> Home</a>
+		</div>
+	
+		<div class="weather">
+			<input placeholder="City/ZIP" id="search">
+			<select id="units">
+				<option value="m">Celcius</option>
+				<option value="f">Fahrenheit</option>
+			</select>
+			<button onclick="getweather()">Get Weather!</button><br><br>
+			<img id="image" style="border-radius: 5px;"/>
+			<div id="output"></div>
+		</div>
+	</body>
+	
+	<script>
+		// this function would get and display the weathers provided by the weatherstack api
+		function getweather(){
+		var city = document.getElementById("search").value;
+		var units = document.getElementById("units").value;
+			fetch("http://api.weatherstack.com/current?access_key=fed5b5ce13999c78351e2605ed6fafff&query="+city+"&units="+units)
+
+			.then(a=>a.json())
+			.then(response => {
+			document.getElementById("image").src=response.current.weather_icons[0];
+			document.getElementById("output").innerHTML="<h1>"+response.current.weather_descriptions[0]+"</h1>Temperature: "
+			+response.current.temperature+"<br>Feels like: "
+			+response.current.feelslike+"<br>UV index: "
+			+response.current.uv_index+"<br>Humidity: "
+			+response.current.humidity+"<br>Cloud cover: "
+			+response.current.cloudcover;
+			});
+		}
+	</script>
+	
+</html>

@@ -2,7 +2,7 @@
 // SOLANO, Meryll Dayne B.
 // ITMC231 Platform Technologies
 // BS IT - 2ND YEAR
-// Midterm Requirement
+// Final Requirement
 // Honor Code:
 // This is my not fully my own work and I have received some help from the internet that helped in completing this. 
 // I have integrated some ideas that I have found available on the internet.
@@ -13,7 +13,7 @@
 	include "database_conn.php";
 	session_start();
 	
-	// if the edit button has been set/clicked
+	// if the edit button has been set/declared
 	if (isset($_GET['edit'])) {
 		$ID = $_GET['edit'];
 		$update = true;
@@ -30,9 +30,15 @@
 <html>
 	<head>
 		<link rel="stylesheet" type="text/css" href="edit_profile.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+		<link href="https://fonts.googleapis.com/css?family=Open+Sans:100,300,400,600" rel="stylesheet" type="text/css">
 		<title>Your Profile</title>
 	</head>
 	<body>
+		<div class="home_nav">
+			<a class="active" href="home.php"><i class="fa fa-home"></i> Home</a>
+		</div>
+	
 		<!-- display prompt message -->
 		<?php if (isset($_SESSION['message'])): ?>
 		<div class="msg">
@@ -60,15 +66,16 @@
 					<td><?php echo $row['username']; ?></td>
 					<td><?php echo $row['password']; ?></td>
 					<td>
-						<a href="profile.php?edit=<?php echo $row['ID']; ?>" class="edit_btn" >Edit</a>  
+						<a href="profile.php?edit=<?php echo $row['ID']; ?>" class="edit_btn" onclick="return confirm('Edit Your Profile?');">Edit</a>  
 					</td>
 					<td>
-						<a href="database_conn.php?del=<?php echo $row['ID']; ?>" class="del_btn">Delete</a>
+						<a href="login.php?del=<?php echo $row['ID']; ?>" class="del_btn" onclick="return confirm('Delete Your Account?');">Delete</a>
 					</td>
 				</tr>
 			<?php } ?>
 		</table>
 
+		<!-- table allotted for profile update -->
 		<form method="post" action="database_conn.php" >
 			<div class="input-group">
 				<label>Username</label>

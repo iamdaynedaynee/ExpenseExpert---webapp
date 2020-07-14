@@ -3,7 +3,7 @@
 	// SOLANO, Meryll Dayne B.
 	// ITMC231 Platform Technologies
 	// BS IT - 2ND YEAR
-	// Midterm Requirement
+	// Final Requirement
 	// Honor Code:
 	// This is my not fully my own work and I have received some help from the internet that helped in completing this.
 	// I have integrated some ideas that I have found available on the internet.
@@ -12,9 +12,9 @@
 	// If proven guilty, I won't be credited any points for this endeavor.
 
 	include "database_conn.php";
-	session_start();
+	require_once "callback.php";
 	
-	if(!isset($_SESSION['id'])){
+	if(!isset($_SESSION['ID'])){
 		header("location: login.php");
 	}
 	else {
@@ -39,6 +39,7 @@
 				<div class="dropdown">
 					<button class="dropbtn"><i class="fa fa-user"></i> <?php echo $_SESSION['username'];?></button>
 					<div class="dropdown-content">
+						<a href="weather.html"><i class="fa fa-cloud"></i> Weather </a>
 						<a href="profile.php"><i class="fa fa-pencil-square-o"></i> Edit Profile </a>
 						<a href="logout.php"><i class="fa fa-sign-out"></i> Logout</a>
 					</div>

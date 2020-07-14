@@ -2,7 +2,7 @@
 	// SOLANO, Meryll Dayne B.
 	// ITMC231 Platform Technologies
 	// BS IT - 2ND YEAR
-	// Midterm Requirement
+	// Final Requirement
 	// Honor Code:
 	// This is my own work and I have not received any unauthorized help in completing this. 
 	// I have not copied from my classmate, friend, nor any unauthorized resource. 
@@ -11,7 +11,9 @@
 	
 	include "database_conn.php";
 	session_start();
+	// unset the session id
 	unset($_SESSION['id']);
+	// destroy session
 	session_destroy();
 	
 	header("location: login.php");

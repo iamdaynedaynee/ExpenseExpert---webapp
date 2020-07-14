@@ -1,7 +1,7 @@
 // SOLANO, Meryll Dayne B.
 // ITMC231 Platform Technologies
 // BS IT - 2ND YEAR
-// Midterm Requirement
+// Final Requirement
 // Honor Code:
 // This is my not fully my own work and I have received some help from the internet that helped in completing this. 
 // I have integrated some ideas that I have found available on the internet.
@@ -36,7 +36,7 @@ var budgetController = (function(){
 		this.description = description;
 		this.value = value;
 	};
-	// constructor
+	// calculate total income
 	var calculateTotal = function(type){
 		var sum = 0;
 		data.allItems[type].forEach(function(el){
@@ -74,7 +74,7 @@ var budgetController = (function(){
 			} else if(type === "inc") {
 				newItem = new Income(ID,des,val);
 			}
-			// Push it into data structure
+			// Push data
 			data.allItems[type].push(newItem);
 			// Return the new element
 			return newItem;
